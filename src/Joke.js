@@ -1,29 +1,23 @@
 import React from "react";
+import "./Joke.css";
 
-const Joke = (props) => {
-  const { id, text, vote, votes } = props;
+const Joke = ({ id, text, vote, votes }) => {
   return (
-    <>
-      <div className="Joke-textarea">
-        <h3>Joke</h3>
-        This is a joke component it has props.
-        <p>State.id = {id}</p>
-        <p>State.text = {text}</p>
-        <p>State.votes = {votes}</p>
+    <div className="Joke">
+      <div className="Joke-votearea">
+        <button onClick={(evt) => vote(id, +1)}>
+          <i className="fas fa-thumbs-up" />
+        </button>
+
+        <button onClick={(evt) => vote(id, -1)}>
+          <i className="fas fa-thumbs-down" />
+        </button>
+
+        {votes}
       </div>
-      <button
-        onClick={() => {
-          vote(id, -1);
-        }}>
-        Vote -
-      </button>
-      <button
-        onClick={() => {
-          vote(id, 1);
-        }}>
-        Vote +
-      </button>
-    </>
+
+      <div className="Joke-text">{text}</div>
+    </div>
   );
 };
 

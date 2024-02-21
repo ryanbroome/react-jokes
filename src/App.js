@@ -1,15 +1,15 @@
 import React from "react";
-import JokeList2 from "./JokeList2";
+import JokeList from "./JokeList";
 
 /** App component. Renders list of jokes. */
 
-function App2() {
+function App() {
   return (
     <div className="App">
-      This is a test being rendered from the App
-      <JokeList2 />
+      <h1>cheezyJokesApi</h1>
+      <JokeList />
     </div>
   );
 }
 
-export default App2;
+export default App;
